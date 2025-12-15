@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Radio RYS – 100.9 FM / 1040 AM - Tu conexión con la información y la música. Noticias, programación radial, comunicados y mucho más.">
+    <meta name="keywords" content="Radio RYS, 100.9 FM, 1040 AM, radio, noticias, música, comunicados, programación radial">
+    <meta name="author" content="Radio RYS">
+    <title>Radio RYS – 100.9 FM / 1040 AM | Tu conexión con la información y la música</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="header__container">
+            <a href="#inicio" class="header__logo">
+                <div class="logo-circle">
+                    <span class="logo-text">RYS</span>
+                    <span class="logo-freq">100.9 FM</span>
+                </div>
+                <div class="logo-info">
+                    <span class="logo-name">Radio RYS</span>
+                    <span class="logo-subtitle">100.9 FM / 1040 AM</span>
+                </div>
+            </a>
+            
+            <nav class="nav" id="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#inicio" class="nav__link active">Inicio</a></li>
+                    <li class="nav__item"><a href="#en-vivo" class="nav__link">En Vivo</a></li>
+                    <li class="nav__item"><a href="#programacion" class="nav__link">Programación</a></li>
+                    <li class="nav__item"><a href="#comunicados" class="nav__link">Comunicados</a></li>
+                    <li class="nav__item"><a href="#publicidad" class="nav__link">Publicidad</a></li>
+                    <li class="nav__item"><a href="#contacto" class="nav__link">Contacto</a></li>
+                </ul>
+            </nav>
+            
+            <button class="nav__toggle" id="navToggle" aria-label="Abrir menú">
+                <span class="nav__toggle-line"></span>
+                <span class="nav__toggle-line"></span>
+                <span class="nav__toggle-line"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- HERO PRINCIPAL -->
+    <section class="hero" id="inicio">
+        <div class="hero__overlay"></div>
+        <div class="hero__content">
+            <div class="hero__badge animate-fade-in">
+                <span class="hero__badge-icon">🎙️</span>
+                <span>En Vivo 24/7</span>
+            </div>
+            <h1 class="hero__title animate-fade-in">Radio RYS</h1>
+            <p class="hero__subtitle animate-fade-in">100.9 FM / 1040 AM</p>
+            <p class="hero__description animate-fade-in">Tu conexión con la información y la música</p>
+            <div class="hero__buttons animate-fade-in">
+                <a href="#en-vivo" class="btn btn--primary">
+                    <span class="btn__icon">▶</span>
+                    Escuchar en Vivo
+                </a>
+                <a href="#programacion" class="btn btn--secondary">
+                    <span class="btn__icon">📅</span>
+                    Ver Programación
+                </a>
+            </div>
+        </div>
+        <div class="hero__waves">
+            <svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,69.3C960,85,1056,107,1152,101.3C1248,96,1344,64,1392,48L1440,32L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- SECCIÓN EN VIVO -->
+    <section class="en-vivo" id="en-vivo">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">🔴 En Vivo</span>
+                <h2 class="section-title">Transmisión en Directo</h2>
+                <p class="section-description">Escucha nuestra programación las 24 horas del día, los 7 días de la semana</p>
+            </div>
+            
+            <div class="en-vivo__content">
+                <div class="en-vivo__player-container">
+                    <div class="en-vivo__image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800" alt="Consola de radio" class="en-vivo__image">
+                        <div class="en-vivo__status">
+                            <span class="status-dot"></span>
+                            <span>Transmisión activa</span>
+                        </div>
+                    </div>
+                    
+                    <div class="en-vivo__player">
+                        <div class="player__info">
+                            <div class="player__now-playing">
+                                <span class="player__label">Ahora sonando:</span>
+                                <span class="player__current" id="currentShow">Amanecer RYS con Karla Medina</span>
+                            </div>
+                            <div class="player__visualizer">
+                                <span class="bar"></span>
+                                <span class="bar"></span>
+                                <span class="bar"></span>
+                                <span class="bar"></span>
+                                <span class="bar"></span>
+                                <span class="bar"></span>
+                                <span class="bar"></span>
+                                <span class="bar"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="player__controls">
+                            <button class="player__btn player__btn--play" id="playBtn" aria-label="Reproducir">
+                                <span class="play-icon">▶</span>
+                            </button>
+                            <div class="player__volume">
+                                <span class="volume-icon">🔊</span>
+                                <input type="range" min="0" max="100" value="70" class="volume-slider" id="volumeSlider">
+                            </div>
+                        </div>
+                        
+                        <audio id="radioPlayer" preload="none">
+                            <source src="https://stream.zeno.fm/yn65fsaurfhvv" type="audio/mpeg">
+                            Tu navegador no soporta el elemento de audio.
+                        </audio>
+                    </div>
+                </div>
+                
+                <div class="en-vivo__info-cards">
+                    <div class="info-card">
+                        <div class="info-card__icon">📻</div>
+                        <h3 class="info-card__title">FM 100.9</h3>
+                        <p class="info-card__text">Señal de alta fidelidad para la mejor experiencia auditiva</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-card__icon">📡</div>
+                        <h3 class="info-card__title">AM 1040</h3>
+                        <p class="info-card__text">Mayor cobertura para llegar a más oyentes</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-card__icon">🌐</div>
+                        <h3 class="info-card__title">Online</h3>
+                        <p class="info-card__text">Escúchanos desde cualquier parte del mundo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN PROGRAMACIÓN -->
+    <section class="programacion" id="programacion">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">📅 Horarios</span>
+                <h2 class="section-title">Programación Radial</h2>
+                <p class="section-description">Conoce nuestros programas y el talento que los hace posibles</p>
+            </div>
+            
+            <div class="programacion__grid">
+                <div class="programa-card">
+                    <div class="programa-card__time">5:00 AM – 8:00 AM</div>
+                    <div class="programa-card__content">
+                        <h3 class="programa-card__title">Amanecer RYS</h3>
+                        <p class="programa-card__host">
+                            <span class="host-icon">🎤</span>
+                            Karla Medina
+                        </p>
+                        <p class="programa-card__description">Inicia tu día con las mejores noticias y música para despertar con energía.</p>
+                    </div>
+                    <div class="programa-card__decoration"></div>
+                </div>
+                
+                <div class="programa-card">
+                    <div class="programa-card__time">8:00 AM – 10:00 AM</div>
+                    <div class="programa-card__content">
+                        <h3 class="programa-card__title">Noticias al Día</h3>
+                        <p class="programa-card__host">
+                            <span class="host-icon">🎤</span>
+                            Equipo RYS
+                        </p>
+                        <p class="programa-card__description">Mantente informado con las noticias más relevantes del ámbito local y nacional.</p>
+                    </div>
+                    <div class="programa-card__decoration"></div>
+                </div>
+                
+                <div class="programa-card">
+                    <div class="programa-card__time">10:00 AM – 12:00 PM</div>
+                    <div class="programa-card__content">
+                        <h3 class="programa-card__title">La Hora del Pueblo</h3>
+                        <p class="programa-card__host">
+                            <span class="host-icon">🎤</span>
+                            Junior Ramos
+                        </p>
+                        <p class="programa-card__description">Un espacio dedicado a la comunidad, con temas que nos afectan a todos.</p>
+                    </div>
+                    <div class="programa-card__decoration"></div>
+                </div>
+                
+                <div class="programa-card">
+                    <div class="programa-card__time">2:00 PM – 5:00 PM</div>
+                    <div class="programa-card__content">
+                        <h3 class="programa-card__title">Tardes Musicales</h3>
+                        <p class="programa-card__host">
+                            <span class="host-icon">🎤</span>
+                            Ariana López
+                        </p>
+                        <p class="programa-card__description">La mejor selección musical para acompañar tus tardes con ritmo y alegría.</p>
+                    </div>
+                    <div class="programa-card__decoration"></div>
+                </div>
+                
+                <div class="programa-card">
+                    <div class="programa-card__time">7:00 PM – 9:00 PM</div>
+                    <div class="programa-card__content">
+                        <h3 class="programa-card__title">Noche Informativa</h3>
+                        <p class="programa-card__host">
+                            <span class="host-icon">🎤</span>
+                            Carlos Huamán
+                        </p>
+                        <p class="programa-card__description">El cierre perfecto del día con las noticias más importantes y análisis profundo.</p>
+                    </div>
+                    <div class="programa-card__decoration"></div>
+                </div>
+            </div>
+            
+            <div class="programacion__table-wrapper">
+                <table class="programacion__table">
+                    <thead>
+                        <tr>
+                            <th>Programa</th>
+                            <th>Conductor</th>
+                            <th>Horario</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Amanecer RYS</strong></td>
+                            <td>Karla Medina</td>
+                            <td>5:00 AM – 8:00 AM</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Noticias al Día</strong></td>
+                            <td>Equipo RYS</td>
+                            <td>8:00 AM – 10:00 AM</td>
+                        </tr>
+                        <tr>
+                            <td><strong>La Hora del Pueblo</strong></td>
+                            <td>Junior Ramos</td>
+                            <td>10:00 AM – 12:00 PM</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tardes Musicales</strong></td>
+                            <td>Ariana López</td>
+                            <td>2:00 PM – 5:00 PM</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Noche Informativa</strong></td>
+                            <td>Carlos Huamán</td>
+                            <td>7:00 PM – 9:00 PM</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN COMUNICADOS -->
+    <section class="comunicados" id="comunicados">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">📢 Noticias</span>
+                <h2 class="section-title">Comunicados</h2>
+                <p class="section-description">Mantente informado con los últimos comunicados de Radio RYS</p>
+            </div>
+            
+            <div class="comunicados__grid">
+                <article class="comunicado-card">
+                    <div class="comunicado-card__image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=600" alt="Comunicado importante" class="comunicado-card__image">
+                        <div class="comunicado-card__category">Importante</div>
+                    </div>
+                    <div class="comunicado-card__content">
+                        <span class="comunicado-card__date">📅 12 de Diciembre, 2024</span>
+                        <h3 class="comunicado-card__title">Nueva Cobertura Regional</h3>
+                        <p class="comunicado-card__text">Radio RYS amplía su cobertura a nuevas regiones del país. Ahora puedes escucharnos en más localidades con mejor señal y mayor alcance.</p>
+                        <button class="comunicado-card__btn" data-modal="modal1">Leer más</button>
+                    </div>
+                </article>
+                
+                <article class="comunicado-card">
+                    <div class="comunicado-card__image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=600" alt="Evento especial" class="comunicado-card__image">
+                        <div class="comunicado-card__category">Evento</div>
+                    </div>
+                    <div class="comunicado-card__content">
+                        <span class="comunicado-card__date">📅 10 de Diciembre, 2024</span>
+                        <h3 class="comunicado-card__title">Aniversario de Radio RYS</h3>
+                        <p class="comunicado-card__text">Celebramos un año más de transmisión continua. Gracias a todos nuestros oyentes por su fidelidad y apoyo incondicional.</p>
+                        <button class="comunicado-card__btn" data-modal="modal2">Leer más</button>
+                    </div>
+                </article>
+                
+                <article class="comunicado-card">
+                    <div class="comunicado-card__image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1559523161-0fc0d8b38a7a?w=600" alt="Programación especial" class="comunicado-card__image">
+                        <div class="comunicado-card__category">Programación</div>
+                    </div>
+                    <div class="comunicado-card__content">
+                        <span class="comunicado-card__date">📅 8 de Diciembre, 2024</span>
+                        <h3 class="comunicado-card__title">Nuevos Programas 2025</h3>
+                        <p class="comunicado-card__text">Preparamos una programación renovada para el próximo año con nuevos espacios dedicados a la juventud y cultura local.</p>
+                        <button class="comunicado-card__btn" data-modal="modal3">Leer más</button>
+                    </div>
+                </article>
+                
+                <article class="comunicado-card">
+                    <div class="comunicado-card__image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600" alt="Alianza estratégica" class="comunicado-card__image">
+                        <div class="comunicado-card__category">Alianzas</div>
+                    </div>
+                    <div class="comunicado-card__content">
+                        <span class="comunicado-card__date">📅 5 de Diciembre, 2024</span>
+                        <h3 class="comunicado-card__title">Convenio con Instituciones</h3>
+                        <p class="comunicado-card__text">Radio RYS firma convenios con instituciones educativas para promover la participación ciudadana y educación mediática.</p>
+                        <button class="comunicado-card__btn" data-modal="modal4">Leer más</button>
+                    </div>
+                </article>
+                
+                <article class="comunicado-card">
+                    <div class="comunicado-card__image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600" alt="Tecnología nueva" class="comunicado-card__image">
+                        <div class="comunicado-card__category">Tecnología</div>
+                    </div>
+                    <div class="comunicado-card__content">
+                        <span class="comunicado-card__date">📅 1 de Diciembre, 2024</span>
+                        <h3 class="comunicado-card__title">Modernización de Equipos</h3>
+                        <p class="comunicado-card__text">Renovamos nuestros equipos de transmisión con tecnología de última generación para ofrecerte la mejor calidad de audio.</p>
+                        <button class="comunicado-card__btn" data-modal="modal5">Leer más</button>
+                    </div>
+                </article>
+                
+                <article class="comunicado-card">
+                    <div class="comunicado-card__image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600" alt="Responsabilidad social" class="comunicado-card__image">
+                        <div class="comunicado-card__category">Social</div>
+                    </div>
+                    <div class="comunicado-card__content">
+                        <span class="comunicado-card__date">📅 28 de Noviembre, 2024</span>
+                        <h3 class="comunicado-card__title">Campaña Solidaria</h3>
+                        <p class="comunicado-card__text">Únete a nuestra campaña solidaria navideña. Juntos podemos hacer la diferencia en nuestra comunidad.</p>
+                        <button class="comunicado-card__btn" data-modal="modal6">Leer más</button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN PUBLICIDAD -->
+    <section class="publicidad" id="publicidad">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">📺 Spots</span>
+                <h2 class="section-title">Spots Publicitarios</h2>
+                <p class="section-description">Conoce a nuestros anunciantes y sus promociones</p>
+            </div>
+            
+            <div class="publicidad__carousel-wrapper">
+                <button class="carousel__btn carousel__btn--prev" id="carouselPrev" aria-label="Anterior">‹</button>
+                
+                <div class="publicidad__carousel" id="carousel">
+                    <div class="spot-card">
+                        <div class="spot-card__image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400" alt="Restaurante" class="spot-card__image">
+                            <div class="spot-card__play" data-audio="spot1">▶</div>
+                        </div>
+                        <div class="spot-card__content">
+                            <h3 class="spot-card__title">Restaurante El Sabor</h3>
+                            <p class="spot-card__description">Los mejores platos típicos de la región. ¡Visítanos!</p>
+                            <button class="spot-card__btn" data-audio="spot1">
+                                <span class="btn-icon">🔊</span>
+                                Reproducir Spot
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="spot-card">
+                        <div class="spot-card__image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400" alt="Tienda de ropa" class="spot-card__image">
+                            <div class="spot-card__play" data-audio="spot2">▶</div>
+                        </div>
+                        <div class="spot-card__content">
+                            <h3 class="spot-card__title">Boutique Fashion</h3>
+                            <p class="spot-card__description">Moda actual con las últimas tendencias. Descuentos exclusivos.</p>
+                            <button class="spot-card__btn" data-audio="spot2">
+                                <span class="btn-icon">🔊</span>
+                                Reproducir Spot
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="spot-card">
+                        <div class="spot-card__image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1549924231-f129b911e442?w=400" alt="Concesionario" class="spot-card__image">
+                            <div class="spot-card__play" data-audio="spot3">▶</div>
+                        </div>
+                        <div class="spot-card__content">
+                            <h3 class="spot-card__title">AutoMotriz Central</h3>
+                            <p class="spot-card__description">Vehículos nuevos y usados con la mejor garantía del mercado.</p>
+                            <button class="spot-card__btn" data-audio="spot3">
+                                <span class="btn-icon">🔊</span>
+                                Reproducir Spot
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="spot-card">
+                        <div class="spot-card__image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400" alt="Farmacia" class="spot-card__image">
+                            <div class="spot-card__play" data-audio="spot4">▶</div>
+                        </div>
+                        <div class="spot-card__content">
+                            <h3 class="spot-card__title">Farmacia Salud Plus</h3>
+                            <p class="spot-card__description">Tu salud es nuestra prioridad. Atención 24 horas.</p>
+                            <button class="spot-card__btn" data-audio="spot4">
+                                <span class="btn-icon">🔊</span>
+                                Reproducir Spot
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="spot-card">
+                        <div class="spot-card__image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=400" alt="Empresa" class="spot-card__image">
+                            <div class="spot-card__play" data-audio="spot5">▶</div>
+                        </div>
+                        <div class="spot-card__content">
+                            <h3 class="spot-card__title">Grupo Empresarial Norte</h3>
+                            <p class="spot-card__description">Soluciones integrales para tu negocio. Confía en expertos.</p>
+                            <button class="spot-card__btn" data-audio="spot5">
+                                <span class="btn-icon">🔊</span>
+                                Reproducir Spot
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="spot-card">
+                        <div class="spot-card__image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=400" alt="Academia" class="spot-card__image">
+                            <div class="spot-card__play" data-audio="spot6">▶</div>
+                        </div>
+                        <div class="spot-card__content">
+                            <h3 class="spot-card__title">Academia Saber</h3>
+                            <p class="spot-card__description">Preparación universitaria con los mejores docentes.</p>
+                            <button class="spot-card__btn" data-audio="spot6">
+                                <span class="btn-icon">🔊</span>
+                                Reproducir Spot
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="carousel__btn carousel__btn--next" id="carouselNext" aria-label="Siguiente">›</button>
+            </div>
+            
+            <div class="publicidad__cta">
+                <h3>¿Quieres anunciar con nosotros?</h3>
+                <p>Llega a miles de oyentes con tu mensaje publicitario</p>
+                <a href="#contacto" class="btn btn--primary">Solicitar Información</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN CONTACTO -->
+    <section class="contacto" id="contacto">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">📞 Contáctanos</span>
+                <h2 class="section-title">Ponte en Contacto</h2>
+                <p class="section-description">Estamos aquí para escucharte. Envíanos tu mensaje o sugerencia</p>
+            </div>
+            
+            <div class="contacto__content">
+                <form class="contacto__form" id="contactForm">
+                    <div class="form-group">
+                        <label for="nombre" class="form-label">Nombre Completo</label>
+                        <input type="text" id="nombre" name="nombre" class="form-input" placeholder="Tu nombre completo" required>
+                        <span class="form-icon">👤</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="correo" class="form-label">Correo Electrónico</label>
+                        <input type="email" id="correo" name="correo" class="form-input" placeholder="tu@email.com" required>
+                        <span class="form-icon">✉️</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="telefono" class="form-label">Teléfono (Opcional)</label>
+                        <input type="tel" id="telefono" name="telefono" class="form-input" placeholder="+51 999 999 999">
+                        <span class="form-icon">📱</span>
+                    </div>
+                    
+                    <div class="form-group form-group--full">
+                        <label for="mensaje" class="form-label">Tu Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" class="form-textarea" placeholder="Escribe tu mensaje aquí..." rows="5" required></textarea>
+                        <span class="form-icon form-icon--textarea">💬</span>
+                    </div>
+                    
+                    <button type="submit" class="btn btn--primary btn--full">
+                        <span class="btn__icon">📨</span>
+                        Enviar Mensaje
+                    </button>
+                </form>
+                
+                <div class="contacto__info">
+                    <div class="contacto__map">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.9789934474917!2d-77.0427934!3d-12.0463731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDAyJzQ2LjkiUyA3N8KwMDInMzQuMSJX!5e0!3m2!1ses!2spe!4v1702358400000!5m2!1ses!2spe" 
+                            width="100%" 
+                            height="250" 
+                            style="border:0; border-radius: 15px;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                    
+                    <div class="contacto__details">
+                        <div class="contact-item">
+                            <span class="contact-item__icon">📍</span>
+                            <div class="contact-item__info">
+                                <strong>Dirección</strong>
+                                <p>Av. Principal 1234, Lima, Perú</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <span class="contact-item__icon">📞</span>
+                            <div class="contact-item__info">
+                                <strong>Teléfonos</strong>
+                                <p>+51 (01) 234-5678</p>
+                                <p>+51 999 888 777</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <span class="contact-item__icon">✉️</span>
+                            <div class="contact-item__info">
+                                <strong>Email</strong>
+                                <p>contacto@radiorys.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <span class="contact-item__icon">⏰</span>
+                            <div class="contact-item__info">
+                                <strong>Horario de Atención</strong>
+                                <p>Lunes a Viernes: 8:00 AM - 6:00 PM</p>
+                                <p>Sábados: 9:00 AM - 1:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contacto__social">
+                        <h4>Síguenos en Redes</h4>
+                        <div class="social-links">
+                            <a href="#" class="social-link social-link--facebook" aria-label="Facebook">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                            </a>
+                            <a href="#" class="social-link social-link--instagram" aria-label="Instagram">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                            </a>
+                            <a href="#" class="social-link social-link--twitter" aria-label="Twitter">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                            </a>
+                            <a href="#" class="social-link social-link--youtube" aria-label="YouTube">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                            </a>
+                            <a href="#" class="social-link social-link--tiktok" aria-label="TikTok">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer__waves">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,32L48,37.3C96,43,192,53,288,58.7C384,64,480,64,576,53.3C672,43,768,21,864,21.3C960,21,1056,43,1152,53.3C1248,64,1344,64,1392,64L1440,64L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z" fill="currentColor"></path>
+            </svg>
+        </div>
+        
+        <div class="footer__content">
+            <div class="container">
+                <div class="footer__grid">
+                    <div class="footer__brand">
+                        <div class="footer__logo">
+                            <div class="logo-circle logo-circle--footer">
+                                <span class="logo-text">RYS</span>
+                                <span class="logo-freq">100.9 FM</span>
+                            </div>
+                            <div class="logo-info">
+                                <span class="logo-name">Radio RYS</span>
+                                <span class="logo-subtitle">100.9 FM / 1040 AM</span>
+                            </div>
+                        </div>
+                        <p class="footer__description">Tu conexión con la información y la música. Transmitiendo las 24 horas del día, los 7 días de la semana.</p>
+                    </div>
+                    
+                    <div class="footer__links">
+                        <h4 class="footer__title">Enlaces Rápidos</h4>
+                        <ul class="footer__list">
+                            <li><a href="#inicio">Inicio</a></li>
+                            <li><a href="#en-vivo">En Vivo</a></li>
+                            <li><a href="#programacion">Programación</a></li>
+                            <li><a href="#comunicados">Comunicados</a></li>
+                            <li><a href="#publicidad">Publicidad</a></li>
+                            <li><a href="#contacto">Contacto</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer__links">
+                        <h4 class="footer__title">Programas</h4>
+                        <ul class="footer__list">
+                            <li><a href="#programacion">Amanecer RYS</a></li>
+                            <li><a href="#programacion">Noticias al Día</a></li>
+                            <li><a href="#programacion">La Hora del Pueblo</a></li>
+                            <li><a href="#programacion">Tardes Musicales</a></li>
+                            <li><a href="#programacion">Noche Informativa</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer__contact">
+                        <h4 class="footer__title">Contacto</h4>
+                        <ul class="footer__list footer__list--contact">
+                            <li>
+                                <span class="footer__icon">📍</span>
+                                <span>Av. Principal 1234, Lima</span>
+                            </li>
+                            <li>
+                                <span class="footer__icon">📞</span>
+                                <span>+51 (01) 234-5678</span>
+                            </li>
+                            <li>
+                                <span class="footer__icon">✉️</span>
+                                <span>contacto@radiorys.com</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer__bottom">
+                    <p class="footer__copyright">© 2024 Radio RYS – 100.9 FM / 1040 AM. Todos los derechos reservados.</p>
+                    <div class="footer__bottom-links">
+                        <a href="#">Política de Privacidad</a>
+                        <a href="#">Términos de Uso</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BOTÓN VOLVER ARRIBA -->
+    <button class="back-to-top" id="backToTop" aria-label="Volver arriba">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+    </button>
+
+    <!-- BOTÓN WHATSAPP FLOTANTE -->
+    <a href="https://wa.me/51999888777?text=Hola%20Radio%20RYS,%20quisiera%20información" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <!-- MODAL PARA COMUNICADOS -->
+    <div class="modal" id="comunicadoModal">
+        <div class="modal__overlay"></div>
+        <div class="modal__content">
+            <button class="modal__close" aria-label="Cerrar modal">&times;</button>
+            <h3 class="modal__title" id="modalTitle">Título del Comunicado</h3>
+            <p class="modal__date" id="modalDate">Fecha</p>
+            <div class="modal__body" id="modalBody">
+                <p>Contenido del comunicado...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ALERT DE FORMULARIO -->
+    <div class="form-alert" id="formAlert">
+        <div class="form-alert__content">
+            <span class="form-alert__icon">✅</span>
+            <p class="form-alert__message">¡Mensaje enviado correctamente!</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
